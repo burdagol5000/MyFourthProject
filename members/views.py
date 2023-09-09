@@ -12,7 +12,8 @@ def login_user(request):
             login(request, user)
             return redirect('home')
         else:
+            messages.success(request,("Entered wrong username or password"))
             return redirect('login')
-    else 
 
-    return render(request,'authentication/login.html',{})
+    else: 
+        return render(request,'authentication/login.html',{})

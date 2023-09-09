@@ -19,5 +19,7 @@ from convos.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',home,name='home')
+    path('',home,name='home'),
+    path('members/',include('django.contrib.auth.urls')),
+    path('members/',include('members.urls')),
 ]
